@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="passable_jquery.js"></script>
+  </head>
+  <body>
+    secret: <input type="text" name="secret">
+    <br>
+    nickname: <input type="text" name="nickname">
+    <br>
+    <input type="button" name="generate" value="generate">
+    <br>
+    password: <input type="text" name="password" readonly>
+    <script>
+      $(document).ready(function () {
+        $('input[name="secret"]').passable('register_secret_el');
+        $('input[name="nickname"]').passable('register_nickname_el');
+
+        $('input[name="generate"]').click(function() {
+          var password = $.passable();
+          $('input[name="password"]').val(password);
+        });
+      });
+    </script>
+  </body>
+</html>
