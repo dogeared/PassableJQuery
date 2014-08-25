@@ -13,8 +13,8 @@
     password: <input type="text" name="password" readonly>
     <script>
       $(document).ready(function () {
-        $('input[name="secret"]').passable('register_secret_el');
-        $('input[name="nickname"]').passable('register_nickname_el');
+        $('input[name="secret"]').paSecret();
+        $('input[name="nickname"]').paNickname();
 
         $('input[name="generate"]').click(function() {
           var password = $.passable();

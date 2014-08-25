@@ -2,19 +2,16 @@
   var secretEl;
   var nicknameEl;
 
-  $.fn.passable = function (action) {
-    switch(action) {
-      case 'register_secret_el':
-        secretEl = this;
-        this.attr('type', 'password');
-        var secret = localStorage.getItem('passable_secret');
-        if (secret) { secretEl.val(secret); }
-        break;
-      case 'register_nickname_el':
-        nicknameEl = this;
-        break;
-    }
+  $.fn.paSecret = function () {
+    secretEl = this;
+    this.attr('type', 'password');
+    var secret = localStorage.getItem('passable_secret');
+    if (secret) { secretEl.val(secret); }
+    return this;
+  }
 
+  $.fn.paNickname = function () {
+    nicknameEl = this;
     return this;
   }
 
